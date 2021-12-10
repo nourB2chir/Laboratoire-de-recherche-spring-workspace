@@ -1,0 +1,9 @@
+package com.example.demo.entities;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Member_Event {
+	private Membre_Event_Ids
+
+}
