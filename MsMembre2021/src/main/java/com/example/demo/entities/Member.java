@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
@@ -15,6 +16,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.persistence.UniqueConstraint;
 
 import com.example.demo.beans.EvenementBean;
 import com.example.demo.beans.OutilBean;
@@ -34,6 +36,7 @@ public abstract class Member implements Serializable {
 	private Date dateNaissance;
 	private String cv;
 	private byte[] photo;
+	@Column(name="email", unique=true)
 	private String email;
 	private String password;
 	@Transient

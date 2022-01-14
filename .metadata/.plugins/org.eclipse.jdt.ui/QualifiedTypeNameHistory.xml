@@ -24,4 +24,26 @@
     <fullyQualifiedTypeName name="com.example.demo.beans.OutilBean"/>
     <fullyQualifiedTypeName name="com.example.demo.beans.EvenementBean"/>
     <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="com.example.demo.entities.Etudiant"/>
+    <fullyQualifiedTypeName name="com.example.demo.entities.EnseignantChercheur"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.web.cors.reactive.CorsWebFilter"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="org.springframework.web.reactive.config.CorsRegistry"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.web.servlet.FilterRegistrationBean"/>
+    <fullyQualifiedTypeName name="javax.servlet.Filter"/>
+    <fullyQualifiedTypeName name="org.springframework.web.cors.CorsConfigurationSource"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+    <fullyQualifiedTypeName name="org.springframework.web.filter.CorsFilter"/>
+    <fullyQualifiedTypeName name="org.springframework.web.cors.CorsConfiguration"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource"/>
+    <fullyQualifiedTypeName name="javax.persistence.UniqueConstraint"/>
+    <fullyQualifiedTypeName name="javax.persistence.Column"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.context.properties.EnableConfigurationProperties"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
+    <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Modifying"/>
 </qualifiedTypeNameHistroy>

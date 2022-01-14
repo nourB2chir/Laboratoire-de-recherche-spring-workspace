@@ -1,10 +1,12 @@
 package com.example.demo.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.beans.EvenementBean;
 import com.example.demo.beans.OutilBean;
@@ -119,6 +121,8 @@ public class MembreServiceImpl implements IMemberService {
 
 		return etudiantRepository.findByEncadrant(ens);
 	}
+	
+	
 
 	@Override
 	public void affecterauteurTopublication(Long idauteur, Long idpub) {
@@ -168,9 +172,35 @@ public class MembreServiceImpl implements IMemberService {
 	public List<OutilBean> findOutilByMember(Long memberId) {
 		List<OutilBean> pubs = new ArrayList<OutilBean>();
 		List<Member_Outil> idpubs = membreOutilrepository.findOutilId(memberId);
-		idpubs.forEach(s ->
-		pubs.add(outilProxyService.findOutilById(s.getId().getOutil_id())));
+		idpubs.forEach(s -> 
+			pubs.add(outilProxyService.findOutilById(s.getId().getOutil_id()))
+		);
 		return pubs;
 	}
+	
+	
 
+	@Override
+	public List<Etudiant> findAllEtudiant() {
+		return etudiantRepository.findAll();
+	}
+
+	@Override
+	public List<EnseignantChercheur> findAllEnseignants() {
+		return enseignantRepository.findAll();
+	}
+
+	@Override
+	public void addPhotoToMember(Long memberId, MultipartFile photo) throws IOException {
+		Member mbr = membreRepository.findById(memberId).get();
+		System.out.println("Original Image Byte Size - " + photo.getBytes().length);
+		mbr.setPhoto(photo.getBytes());
+		//System.out.println(photo.length);
+		membreRepository.save(mbr);	
+	}
+
+	@Override
+	public void desaffecterMembreDeOutil(Long idMemer, Long idOutil) {
+		membreOutilrepository.desaffecterMembreDeOutil(idMemer,idOutil);		
+	}
 }

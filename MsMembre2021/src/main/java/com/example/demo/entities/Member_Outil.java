@@ -1,15 +1,19 @@
 package com.example.demo.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 @Entity
 public class Member_Outil {
 	@EmbeddedId
 	private Member_Outil_Ids id;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@MapsId("memeber_id")
 	private Member memeber;
 

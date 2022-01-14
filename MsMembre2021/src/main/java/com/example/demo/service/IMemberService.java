@@ -1,6 +1,9 @@
 package com.example.demo.service;
 
+import java.io.IOException;
 import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.beans.EvenementBean;
 import com.example.demo.beans.OutilBean;
@@ -27,6 +30,10 @@ public interface IMemberService {
 	public Member findByEmail(String email);
 
 	public List<Member> findByNom(String nom);
+	
+	public List<Etudiant> findAllEtudiant();
+	
+	public List<EnseignantChercheur> findAllEnseignants();
 
 	// recherche spécifique des étudiants
 	public List<Etudiant> findByDiplome(String diplome);
@@ -51,5 +58,10 @@ public interface IMemberService {
 	public void affecterMemberToOutil(Long idMember, Long idOutil);
 
 	public List<OutilBean> findOutilByMember(Long memberId);
+	
+	public void addPhotoToMember(Long memberIdLong,  MultipartFile photo) throws IOException;
+
+	void desaffecterMembreDeOutil(Long idMemer, Long idOutil);
+	
 
 }
