@@ -61,7 +61,11 @@ public interface IMemberService {
 	
 	public void addPhotoToMember(Long memberIdLong,  MultipartFile photo) throws IOException;
 
-	void desaffecterMembreDeOutil(Long idMemer, Long idOutil);
+	void desaffecterMembreDeOutil(Long idOutil);
+	
+	void desaffecterMembreDePub(Long idPub);
+	
+	void desaffecterMembreDeEvent(Long idEvent);
 	
 
 }

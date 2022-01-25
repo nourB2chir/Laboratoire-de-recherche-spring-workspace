@@ -14,9 +14,10 @@ import com.example.demo.entities.Member_Outil_Ids;
 public interface MemberOutilRepository extends JpaRepository<Member_Outil, Member_Outil_Ids> {
 	@Query("select m from Member_Outil m where memeber_id=:x")
 	List<Member_Outil> findOutilId(@Param("x") Long member_id);
+	
 	@Transactional
 	@Modifying
-	@Query("delete m from Member_Outil m where memeber_id=:x and outil_id=:y")
-	void desaffecterMembreDeOutil(@Param("x") Long member_id,@Param("y") Long outil_id);
+	@Query("delete from Member_Outil m where outil_id=:y")
+	void desaffecterMembreDeOutil(@Param("y") Long outil_id);
 
 }

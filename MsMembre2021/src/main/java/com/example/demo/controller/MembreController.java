@@ -84,16 +84,31 @@ public class MembreController {
 		iMemberService.affecterauteurTopublication(idetd, idpub);
 	}
 	
+	@DeleteMapping(value = "/membres/desaffecter/publication")
+	public void dessaffectePub(@RequestParam Long idpub) {
+		iMemberService.desaffecterMembreDePub(idpub);
+	}
+	
 	@PutMapping(value = "/membres/affecter/event")
 	public void affecterEvent(@RequestParam Long idMember, @RequestParam Long idEvent) {
 		iMemberService.affecterMemberToEvent(idMember, idEvent);
+	}
+	
+	@DeleteMapping(value = "/membres/desaffecter/event")
+	public void dessaffecteEvent(@RequestParam Long idevent) {
+		iMemberService.desaffecterMembreDeEvent(idevent);
 	}
 	
 	@PutMapping(value = "/membres/affecter/tool")
 	public void affecterTool(@RequestParam Long idMember, @RequestParam Long idOutil) {
 		iMemberService.affecterMemberToOutil(idMember, idOutil);
 	}
-
+	
+	@DeleteMapping(value = "/membres/desaffecter/tool")
+	public void dessaffecteOutil(@RequestParam Long idtool) {
+		iMemberService.desaffecterMembreDeOutil(idtool);
+	}
+	
 	@DeleteMapping(value = "/membres/{id}")
 	public void deleteMembre(@PathVariable Long id) {
 		iMemberService.deleteMember(id);

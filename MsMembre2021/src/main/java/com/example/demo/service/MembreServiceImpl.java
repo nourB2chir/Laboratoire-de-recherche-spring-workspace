@@ -200,7 +200,20 @@ public class MembreServiceImpl implements IMemberService {
 	}
 
 	@Override
-	public void desaffecterMembreDeOutil(Long idMemer, Long idOutil) {
-		membreOutilrepository.desaffecterMembreDeOutil(idMemer,idOutil);		
+	public void desaffecterMembreDeOutil(Long idOutil) {
+		membreOutilrepository.desaffecterMembreDeOutil(idOutil);		
 	}
+
+	@Override
+	public void desaffecterMembreDePub(Long idPub) {
+		membrepubrepository.desaffecterMembreDePub(idPub);
+		
+	}
+
+	@Override
+	public void desaffecterMembreDeEvent(Long idEvent) {
+		membreEventrepository.desaffecterMembreDeEvent(idEvent);		
+	}
+	
+	
 }
